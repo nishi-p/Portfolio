@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Homemade_Apple, Newsreader } from "next/font/google";
+import { Geist, Geist_Mono, Homemade_Apple, Playfair_Display } from "next/font/google";
+import Header from "./Header";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,9 +13,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const newsreader = Newsreader({
+const playfair = Playfair_Display({
   variable: "--font-serif",
   subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 const hand = Homemade_Apple({
@@ -30,17 +32,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${newsreader.variable} ${hand.variable}`}>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} ${hand.variable}`}>
       <body>
-        <header>
-          <a href="/">NISHI PARAMESHWARA</a>
-          <nav>
-            <a href="/">HOME</a>
-            <a href="/#work">WORK</a>
-            <a href="/#about">ABOUT</a>
-          </nav>
-          <p className="header-index">01</p>
-        </header>
+        <Header />
         {children}
       </body>
     </html>
