@@ -206,6 +206,10 @@ export default function WorkSection() {
           </a>
         </div>
       </article>
+      <a href="#scrapbook" className="scroll-cue">
+        Scroll
+        <span className="scroll-cue-arrow">↓</span>
+      </a>
     </section>
   )
 }

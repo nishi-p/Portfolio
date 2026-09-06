@@ -48,6 +48,10 @@ export default function Home() {
         <div className="scrap-note">
           <p>To be added</p>
         </div>
+        <a href="#about" className="scroll-cue">
+          Scroll
+          <span className="scroll-cue-arrow">↓</span>
+        </a>
       </section>
       <section id="about">
         <div className="about-copy">
@@ -58,7 +62,7 @@ export default function Home() {
               <strong>I am Nishi.</strong>
             </p>
             <p>
-              A software engineer interested in technology, numbers, books
+              A software engineer interested in technology, numbers, books, movies
               and public-policy.
             </p>
             <div className="about-links">
