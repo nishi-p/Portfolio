@@ -1,7 +1,24 @@
 const roles = [
   {
-    dates: "2022 — Present",
+    dates: "2029 — Present",
+    company: "Netflix",
+    place: "New York City",
+    title: "Director of Product, Media and Marketing",
+    summary:
+      "I lead content and marketing at Netflix.",
+  },
+  {
+    dates: "2027 — 2029",
+    company: "NVIDIA",
+    place: "San Francisco",
+    title: "Staff Software Engineer",
+    summary:
+      "I build and ship production software at NVIDIA.",
+  },
+  {
+    dates: "2022 — 2027",
     company: "Avalara",
+    place: "Seattle",
     title: "Senior Software Engineer",
     summary:
       "I build and ship production software at Avalara.",
@@ -9,6 +26,7 @@ const roles = [
   {
     dates: "2021",
     company: "Avalara",
+    place: "Seattle",
     title: "Software Engineer Intern",
     summary:
       "I interned on the Connectors team at Avalara and worked on ETL pipelines.",
@@ -16,6 +34,7 @@ const roles = [
   {
     dates: "2017 — 2018",
     company: "Patu IoT Solutions Private Limited",
+    place: "Mumbai",
     title: "IoT Solutions Engineer",
     summary:
       "I worked as an IoT solutions engineer, helping design and deliver connected-device solutions.",
@@ -27,15 +46,18 @@ export default function ExperienceSection() {
     <section id="work">
       <p className="work-section-num">02</p>
       <h2>Work</h2>
-      <p className="work-lede">A short timeline of where I have been.</p>
+      <p className="work-lede">A timeline of where I have been.</p>
       <ol className="timeline">
         {roles.map((role) => (
-          <li key={`${role.company}-${role.dates}`} className="timeline-item">
+          <li key={`${role.company}-${role.title}-${role.dates}`} className="timeline-item">
             <p className="timeline-dates">{role.dates}</p>
             <div className="timeline-body">
               <h3>
                 {role.title}
-                <span className="timeline-company"> · {role.company}</span>
+                <span className="timeline-company">
+                  {role.company ? ` · ${role.company}` : ""}
+                  {role.place ? ` · ${role.place}` : ""}
+                </span>
               </h3>
               <p>{role.summary}</p>
             </div>

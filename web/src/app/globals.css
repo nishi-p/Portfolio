@@ -60,7 +60,7 @@ h1 {
   font-weight: 400;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  max-width: 32rem;
+  max-width: none;
 }
 
 section {
@@ -166,12 +166,13 @@ nav a.is-active {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  flex: 0 1 auto;
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .intro-photo {
   position: relative;
-  flex: 1;
+  flex: 1 1 0;
   min-width: 0;
   padding: 0.65rem 0.65rem 3.4rem;
   background: #f7f1e4;
@@ -312,9 +313,9 @@ nav a.is-active {
   text-transform: none;
 }
 
-.timeline-place {
+.timeline-body p.timeline-place {
   margin: 0.35rem 0 0.85rem;
-  font-family: var(--font-serif), serif;
+  font-size: 1rem;
   letter-spacing: 0.06em;
 }
 
@@ -337,8 +338,7 @@ nav a.is-active {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  flex: 0 1 auto;
-  width: 32rem;
+  flex: 1 1 0;
   min-width: 0;
 }
 
@@ -386,9 +386,17 @@ nav a.is-active {
   cursor: pointer;
 }
 
-.work-item-soon {
-  color: color-mix(in srgb, var(--foreground) 55%, transparent);
-  cursor: default;
+.work-item-github {
+  gap: 0.55rem;
+  font-family: var(--font-serif), serif;
+  font-size: 1.15rem;
+}
+
+.work-item-github svg {
+  display: block;
+  width: 1.35rem;
+  height: 1.35rem;
+  fill: currentColor;
 }
 
 .work-item-num {
@@ -425,11 +433,13 @@ nav a.is-active {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex: 1;
+  flex: 1 1 0;
   min-width: 0;
+  max-width: 100%;
   min-height: calc(100vh - 14rem);
   max-height: calc(100vh - 12rem);
   padding: 2rem;
+  overflow: hidden;
   border-radius: 0.35rem;
   color: #f0ede5;
   background-color: #161616;
@@ -442,7 +452,7 @@ nav a.is-active {
 .work-card::before {
   content: "";
   position: absolute;
-  top: -0.35rem;
+  top: 0.15rem;
   left: 50%;
   z-index: 1;
   width: 4.25rem;
@@ -451,11 +461,17 @@ nav a.is-active {
   transform: translateX(-50%) rotate(-2deg);
 }
 
+.work-card-top {
+  min-width: 0;
+  padding-right: 9.5rem;
+}
+
 .work-card-note {
   position: absolute;
   top: 1.25rem;
   right: 1.25rem;
-  max-width: 9rem;
+  z-index: 1;
+  max-width: min(9rem, calc(100% - 2.5rem));
   padding: 0.85rem;
   background: #ebe6d6;
   color: #121212;
@@ -478,9 +494,10 @@ nav a.is-active {
 .work-card h3 {
   margin-top: 1.25rem;
   font-family: var(--font-serif), serif;
-  font-size: 3.6rem;
+  font-size: clamp(1.7rem, 4.2vw, 3.6rem);
   font-weight: 400;
   line-height: 1.1;
+  overflow-wrap: break-word;
 }
 
 .work-card-sub {
@@ -537,20 +554,38 @@ nav a.is-active {
 
 #scrapbook {
   position: relative;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
 }
 
 #scrapbook h2 {
   font-family: var(--font-serif), serif;
-  font-size: 3.5rem;
+  font-size: 4.25rem;
   font-weight: 400;
   line-height: 1.15;
+}
+
+.scrap-index {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  max-width: 36rem;
+  list-style: none;
+}
+
+.scrap-index li {
+  padding: 0.85rem 0;
+  border-top: 1px solid color-mix(in srgb, var(--foreground) 22%, transparent);
+  font-family: var(--font-serif), serif;
+  font-size: 1.45rem;
 }
 
 .scrap-note {
   position: absolute;
   top: 50%;
-  left: 50%;
+  right: 2rem;
   width: 11rem;
   padding: 1.6rem 1.2rem 1.4rem;
   background: #f5e6a8;
@@ -558,7 +593,7 @@ nav a.is-active {
   font-size: 1.35rem;
   line-height: 1.3;
   text-align: center;
-  transform: translate(-50%, -50%) rotate(-3deg);
+  transform: translateY(-50%) rotate(-3deg);
 }
 
 .scrap-note::before {
@@ -584,8 +619,7 @@ nav a.is-active {
 .about-copy {
   display: flex;
   flex-direction: column;
-  flex: 0 1 auto;
-  width: 32rem;
+  flex: 1 1 0;
   min-width: 0;
 }
 
@@ -651,17 +685,23 @@ nav a.is-active {
   fill: currentColor;
 }
 
+.about-shot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 0;
+  min-width: 0;
+}
+
 .about-photo {
   position: relative;
-  flex: 1;
-  align-self: start;
-  min-width: 0;
-  padding: 0.65rem 0.65rem 3.4rem;
-  background: #f7f1e4;
+  width: min(24rem, 100%);
+  padding: 0.8rem 0.8rem 3.8rem;
+  background: #efe4c4;
   box-shadow:
-    0 0.15rem 0.4rem rgba(18, 18, 18, 0.08),
-    0 0.55rem 1.35rem rgba(18, 18, 18, 0.16);
-  rotate: -1deg;
+    0 0.12rem 0.3rem rgba(18, 18, 18, 0.1),
+    0 0.7rem 1.6rem rgba(18, 18, 18, 0.18);
+  rotate: -2.4deg;
 }
 
 .about-photo::before {
@@ -676,13 +716,24 @@ nav a.is-active {
   transform: translateX(-50%) rotate(-2deg);
 }
 
+.about-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0.8rem 0.8rem 3.8rem;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(196, 160, 106, 0.12), rgba(70, 42, 18, 0.08)),
+    var(--paper-grain);
+  box-shadow: inset 0 0 2.4rem rgba(60, 36, 16, 0.28);
+}
+
 .about-photo img {
   display: block;
   width: 100%;
-  height: calc(100vh - 20rem);
-  max-height: calc(100vh - 20rem);
-  object-fit: cover;
-  object-position: center;
+  height: auto;
+  object-fit: contain;
+  object-position: center top;
+  filter: sepia(0.3) saturate(0.68) contrast(0.9) brightness(1.05);
 }
 
 .about-photo-note {
@@ -731,26 +782,62 @@ nav a.is-active {
   }
 
   .intro-photo,
+  .about-shot,
   .about-photo,
   .work-card {
     width: 100%;
   }
 
-  .intro-photo img,
-  .about-photo img {
+  .intro-photo img {
     height: 55vh;
     max-height: 55vh;
+  }
+
+  .about-photo {
+    width: min(24rem, 100%);
   }
 
   .work-card {
     min-height: 22rem;
     max-height: none;
+    padding: 1.35rem;
+  }
+
+  .work-card-top {
+    padding-right: 8rem;
+  }
+
+  .work-card-note {
+    top: 1rem;
+    right: 1rem;
+    max-width: 7.5rem;
+    padding: 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .work-card-meta {
+    margin-top: 5rem;
+  }
+
+  .work-card h3 {
+    font-size: 1.85rem;
+  }
+
+  .work-card-sub,
+  .work-card-summary {
+    max-width: 100%;
   }
 
   .scroll-cue {
     position: static;
     margin-top: 1.5rem;
     left: auto;
+  }
+
+  .scrap-note {
+    position: static;
+    margin: 2rem auto 0;
+    transform: rotate(-3deg);
   }
 
   .timeline-item {

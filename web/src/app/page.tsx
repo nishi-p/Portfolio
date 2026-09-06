@@ -30,6 +30,21 @@ export default function Home() {
       <section id="scrapbook">
         <p className="work-section-num">04</p>
         <h2>Scrapbook</h2>
+        <p className="work-lede">Things I will pin here.</p>
+        <ul className="scrap-index">
+          <li>Articles</li>
+          <li>Photos</li>
+          <li>Conferences</li>
+          <li>Education</li>
+          <li>Events attended</li>
+          <li>Awards</li>
+          <li>Books and movies</li>
+          <li>Public policy discussion</li>
+          <li>Media events and articles</li>
+          <li>Recognition</li>
+          <li>Papers published</li>
+          <li>Videos</li>
+        </ul>
         <div className="scrap-note">
           <p>To be added</p>
         </div>
@@ -70,9 +85,11 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="about-photo">
-          <img src="/seattle1.png" alt="Seattle" />
-          <p className="about-photo-note">Dope.</p>
+        <div className="about-shot">
+          <div className="about-photo">
+            <img src="/self1.png" alt="Nishi" />
+            <p className="about-photo-note">me, circa 2026</p>
+          </div>
         </div>
       </section>
     </div>
