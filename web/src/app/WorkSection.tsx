@@ -120,6 +120,19 @@ const projects = [
     href: "https://github.com/nishi-p",
     note: "Say it so they hear you.",
   },
+  {
+    id: "round",
+    title: "Round",
+    kind: "IOS",
+    year: "2026",
+    subtitle: "A shipped shared to-do list for a house, a family, or a team",
+    stack: ["SWIFT"],
+    summary:
+      "A collaborative to-do list more than one person can use — chores with roommates, tasks with family, or work with a team. This one is in the store and making money — not a personal demo.",
+    status: "SHIPPED",
+    href: "https://github.com/nishi-p",
+    note: "Your turn.",
+  },
 ]
 
 export default function WorkSection() {
