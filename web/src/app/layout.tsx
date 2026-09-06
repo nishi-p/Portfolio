@@ -27,8 +27,8 @@ const hand = Homemade_Apple({
 });
 
 export const metadata: Metadata = {
-  title: "Nishi",
-  description: "Nishi Parameshwara's Portfolio and Blog",
+  title: "Nishi Parameshwara",
+  description: "Nishi Parameshwara's Portfolio",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
