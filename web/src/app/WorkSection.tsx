@@ -4,17 +4,30 @@ import { useState } from "react"
 
 const projects = [
   {
-    id: "portfolio",
-    title: "Portfolio",
-    kind: "SITE",
+    id: "ocr-translation",
+    title: "OCR with Translation",
+    kind: "APP",
     year: "2026",
-    subtitle: "Personal website and diary",
-    stack: ["NEXT.JS", "REACT", "CSS"],
+    subtitle: "Extract text from images and translate it",
+    stack: ["PYTHON"],
     summary:
-      "I built this website to showcase my projects and share my thoughts and experiences.",
+      "An app that reads text from images and translates it into another language.",
     status: "ACTIVE",
-    href: "https://github.com/nishi-p/Portfolio",
-    note: "Simple ideas often require the most thought.",
+    href: "https://github.com/nishi-p",
+    note: "Words travel further when you can read them.",
+  },
+  {
+    id: "routine",
+    title: "Routine",
+    kind: "IOS",
+    year: "2026",
+    subtitle: "A shipped iOS app, live and monetized",
+    stack: ["SWIFT"],
+    summary:
+      "An iOS app for daily routines. This one is in the store and making money — not a personal demo.",
+    status: "SHIPPED",
+    href: "https://github.com/nishi-p",
+    note: "Shipped beats perfect.",
   },
 ]
 
@@ -46,6 +59,9 @@ export default function WorkSection() {
                 >
                   <span className="work-item-num">{number}</span>
                   <span className="work-item-title">{project.title}</span>
+                  {project.status === "SHIPPED" ? (
+                    <span className="work-item-mark">Shipped</span>
+                  ) : null}
                   <span className="work-item-arrow">→</span>
                 </button>
               </li>

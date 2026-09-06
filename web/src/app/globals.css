@@ -78,7 +78,7 @@ header {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  font-family: var(--font-serif), serif;
+  font-family: var(--font-mono), "IBM Plex Mono", monospace;
   font-size: 0.95rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -114,8 +114,9 @@ nav {
 }
 
 nav a.is-active {
-  text-decoration: underline;
-  text-underline-offset: 0.35em;
+  padding: 0.05em 0.22em;
+  background: #7dcc5a;
+  text-decoration: none;
 }
 
 .intro {
@@ -136,7 +137,7 @@ nav a.is-active {
   flex-direction: column;
   align-items: center;
   gap: 0.25rem;
-  font-family: var(--font-serif), serif;
+  font-family: var(--font-mono), "IBM Plex Mono", monospace;
   font-size: 0.7rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -147,7 +148,7 @@ nav a.is-active {
 }
 
 .intro > div p {
-  font-family: var(--font-serif), serif;
+  font-family: var(--font-geist-sans), Helvetica, sans-serif;
   font-size: 1.15rem;
   letter-spacing: 0.08em;
   margin-top: 1rem;
@@ -156,7 +157,7 @@ nav a.is-active {
 .intro > div p.work-section-num {
   margin-top: 0;
   margin-bottom: 0.75rem;
-  font-family: var(--font-geist-mono), monospace;
+  font-family: var(--font-mono), "IBM Plex Mono", monospace;
   font-size: 0.8rem;
   letter-spacing: 0;
 }
@@ -290,7 +291,7 @@ nav a.is-active {
 }
 
 .timeline-dates {
-  font-family: var(--font-geist-mono), monospace;
+  font-family: var(--font-mono), "IBM Plex Mono", monospace;
   font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -343,7 +344,7 @@ nav a.is-active {
 
 .work-section-num {
   margin-bottom: 0.75rem;
-  font-family: var(--font-geist-mono), monospace;
+  font-family: var(--font-mono), "IBM Plex Mono", monospace;
   font-size: 0.8rem;
 }
 
@@ -391,7 +392,7 @@ nav a.is-active {
 }
 
 .work-item-num {
-  font-family: var(--font-geist-mono), monospace;
+  font-family: var(--font-mono), "IBM Plex Mono", monospace;
   font-size: 0.8rem;
 }
 
@@ -401,13 +402,22 @@ nav a.is-active {
   font-size: 1.15rem;
 }
 
+.work-item-mark {
+  font-family: var(--font-mono), "IBM Plex Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+
 .work-item-arrow {
   font-size: 1rem;
 }
 
 .work-item.is-active .work-item-title {
-  text-decoration: underline;
-  text-underline-offset: 0.25em;
+  padding: 0.05em 0.22em;
+  background: #7dcc5a;
+  text-decoration: none;
 }
 
 .work-card {
@@ -459,7 +469,7 @@ nav a.is-active {
   display: flex;
   justify-content: space-between;
   margin-top: 7rem;
-  font-family: var(--font-geist-mono), monospace;
+  font-family: var(--font-mono), "IBM Plex Mono", monospace;
   font-size: 0.7rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -487,7 +497,7 @@ nav a.is-active {
   gap: 0.35rem;
   margin-top: 1.5rem;
   list-style: none;
-  font-family: var(--font-geist-mono), monospace;
+  font-family: var(--font-mono), "IBM Plex Mono", monospace;
   font-size: 0.7rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -503,7 +513,7 @@ nav a.is-active {
 
 .work-card-status {
   margin-bottom: 1.25rem;
-  font-family: var(--font-geist-mono), monospace;
+  font-family: var(--font-mono), "IBM Plex Mono", monospace;
   font-size: 0.7rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -602,7 +612,7 @@ nav a.is-active {
 
 .about-copy p.work-section-num {
   margin-bottom: 0.75rem;
-  font-family: var(--font-geist-mono), monospace;
+  font-family: var(--font-mono), "IBM Plex Mono", monospace;
   font-size: 0.8rem;
   line-height: 1.2;
 }
