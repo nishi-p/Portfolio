@@ -1,3 +1,4 @@
+import ArchiveScene from "./ArchiveScene"
 import ExperienceSection from "./ExperienceSection"
 import WorkSection from "./WorkSection"
 
@@ -7,8 +8,12 @@ export default function Home() {
       <section id="home" className="intro">
         <div>
           <p className="work-section-num">01</p>
-          <h1>An archive of things I build, think & notice.</h1>
+          <h1>
+            An archive of things I build, think <span className="amp">&</span>{" "}
+            notice.
+          </h1>
           <p>Software Engineer</p>
+          <p>Artist</p>
           {/* <p className="cities">
             <span>Mumbai</span>
             <span className="cities-line"></span>
@@ -16,21 +21,14 @@ export default function Home() {
           </p> */}
         </div>
         <div className="intro-photo">
-          <img src="/seattle1.png" alt="Seattle" />
-          <p className="photo-note">Seattle</p>
-          <p className="sticky-note">A quieter internet please.</p>
+          <ArchiveScene />
         </div>
-        <a href="#work" className="scroll-cue">
-          Scroll
-          <span className="scroll-cue-arrow">↓</span>
-        </a>
       </section>
       <ExperienceSection />
       <WorkSection />
       <section id="scrapbook">
         <p className="work-section-num">04</p>
         <h2>Scrapbook</h2>
-        <p className="work-lede">Things I will pin here.</p>
         <ul className="scrap-index">
           <li>Articles</li>
           <li>Photos</li>
@@ -48,10 +46,6 @@ export default function Home() {
         <div className="scrap-note">
           <p>To be added</p>
         </div>
-        <a href="#about" className="scroll-cue">
-          Scroll
-          <span className="scroll-cue-arrow">↓</span>
-        </a>
       </section>
       <section id="about">
         <div className="about-copy">
@@ -62,7 +56,7 @@ export default function Home() {
               <strong>I am Nishi.</strong>
             </p>
             <p>
-              A software engineer interested in technology, numbers, books, movies
+              A software engineer interested in technology, numbers, media
               and public-policy.
             </p>
             <div className="about-links">

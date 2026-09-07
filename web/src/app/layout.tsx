@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Geist, Homemade_Apple, IBM_Plex_Mono } from "next/font/google";
+import { Homemade_Apple, IBM_Plex_Mono, Instrument_Serif } from "next/font/google";
 import Header from "./Header";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
 const plexMono = IBM_Plex_Mono({
   variable: "--font-mono",
@@ -14,10 +9,11 @@ const plexMono = IBM_Plex_Mono({
   weight: ["400", "500"],
 });
 
-const cormorant = Cormorant_Garamond({
+const instrument = Instrument_Serif({
   variable: "--font-serif",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: "400",
+  style: ["normal", "italic"],
 });
 
 const hand = Homemade_Apple({
@@ -33,7 +29,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${plexMono.variable} ${cormorant.variable} ${hand.variable}`}>
+    <html lang="en" className={`${plexMono.variable} ${instrument.variable} ${hand.variable}`}>
       <body>
         <Header />
         {children}

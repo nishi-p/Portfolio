@@ -215,14 +215,10 @@ export default function WorkSection() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            View Project →
+            {selected.status === "SHIPPED" ? "View Product →" : "View Project →"}
           </a>
         </div>
       </article>
-      <a href="#scrapbook" className="scroll-cue">
-        Scroll
-        <span className="scroll-cue-arrow">↓</span>
-      </a>
     </section>
   )
 }

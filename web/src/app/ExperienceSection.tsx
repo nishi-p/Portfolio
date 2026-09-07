@@ -64,10 +64,6 @@ export default function ExperienceSection() {
           </li>
         ))}
       </ol>
-      <a href="#projects" className="scroll-cue">
-        Scroll
-        <span className="scroll-cue-arrow">↓</span>
-      </a>
     </section>
   )
 }
